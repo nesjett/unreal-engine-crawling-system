@@ -4,6 +4,10 @@ The **Crawling System** for Unreal Engine is a framework that will empower you w
 
 This systems DO NOT allow to crawl freely on the game, but to follow a spline based path forward (or backwards) with some nice animations.
 
+::: youtube Nf-1ZlxaScM
+
+::: youtube 22P4r7rWidc
+
 ## Key features
 - *Spline based* routes: The user can only move along a spline path. 
 - **Ground detection** for correct player positioning: No need to worry about pixel-perfect placement of your spline path.
