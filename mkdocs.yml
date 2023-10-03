@@ -8,6 +8,9 @@ site_description: Allow your players and AI to crawl along a spline with multipl
 site_author: Nestor Sabater
 copyright: All rights reserved
 
+markdown_extensions:
+  - customblocks
+
 nav:
   - Home: '/'
   - 'User Guide': 'user-guide.md'
