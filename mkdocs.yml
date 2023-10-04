@@ -15,10 +15,6 @@ nav:
   - Home: '/'
 
 
-theme:
-  features:
-    - navigation.instant
-
 
 
 extra:
