@@ -48,14 +48,24 @@ This systems DO NOT allow to crawl freely on the game, but to follow a spline ba
 
 ![Package content](./images/cs-package-content.jpg){ loading=lazy }
 
-* Debuggin and setup elements: Game Mode, Player Controller, HUD, Widged with options.
-* Core route Actor: Allows interacting with the route path.
-* Example Characters: 
-    * 2 Player characters with input bindings.
-    * 1 AI character with basic movement functionality.
+* **Debuggin** and setup elements: Game Mode, Player Controller, HUD, Widged with options.
+* **Core route** Actor: Allows interacting with the route path.
+* Example **routes**: 2 Actors implementing the route path with different features configured.
+* Example **Characters**: 
+    * 2 **Player characters** with input bindings.
+    * 1 **AI character** with basic movement functionality.
+* **Interfaces** (1): Allows implementing the system on existing Characters.
+* **Enumerations** (3):
+    * Character state: Crawling/Entering route/etc.
+    * Door definition: Front/Back door.
+    * Movement direction: Forward/Backwards.
 
 
 
 ## Technical considerations
 
-TODO: Describe the technical implementation and things to take into account. (performance etc)
+The system **completly avoids using tick events** on the routes, so it is performant at any scale.
+
+Entering/Leaving a route is handled through *On Overlap* events with the entrance/exit collision areas.
+
+The animations for the first person Character arms can be used in production, but they are not optimal (the package focuses on functionality) which means that **the rig might fail for other skeletons**. It is also slightly adjusted on rotation and position inside the implementer blueprints.
