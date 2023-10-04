@@ -32,3 +32,13 @@ extra:
   social:
     - icon: fontawesome/brands/discord
       link: https://discord.com/channels/685799359308365851/685799359765676064
+      name: Support Discord Channel
+
+    - icon: fontawesome/brands/instagram
+      link: https://www.instagram.com/nsabater.dev/
+      name: Instagram
+
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/c/NestorSabater
+      name: Youtube channel
+
