@@ -15,10 +15,6 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.superfences
 
-nav:
-  - Home: '/'
-
-
 theme:
   name: material
   favicon: https://nsabater.com/wp-content/uploads/2016/11/cropped-favicon_portfolio-1-32x32.png
