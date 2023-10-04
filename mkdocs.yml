@@ -15,6 +15,15 @@ nav:
   - Home: '/'
 
 
+theme:
+  features:
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.sections
+    - navigation.path
+    - toc.follow
+    - toc.integrate
+    - navigation.footer
 
 
 extra:
