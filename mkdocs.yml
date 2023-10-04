@@ -1,5 +1,3 @@
-theme:
-  name: material
 
 site_name: Crawling System for Unreal Engine
 site_url: https://nesjett.github.io/unreal-engine-crawling-system/
@@ -16,13 +14,17 @@ nav:
 
 
 theme:
+  name: material
   features:
+    - navigation.instant
+    - navigation.instant.prefetch
     - navigation.instant.progress
     - navigation.tracking
     - navigation.sections
     - navigation.path
     - toc.follow
     - toc.integrate
+    - navigation.top
     - navigation.footer
 
 
