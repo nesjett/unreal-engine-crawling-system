@@ -2,6 +2,7 @@
 site_name: Crawling System for Unreal Engine
 site_url: https://nesjett.github.io/unreal-engine-crawling-system/
 repo_url: https://www.unrealengine.com/marketplace/en-US/product/crawling-system-prone
+repo_name: UE Marketplace
 site_description: Allow your players and AI to crawl along a spline with multiple options. Ready for first person and third person in Unreal Engine 4.X and 5.X
 site_author: Nestor Sabater
 copyright: All rights reserved
@@ -20,6 +21,9 @@ nav:
 
 theme:
   name: material
+  favicon: https://nsabater.com/wp-content/uploads/2016/11/cropped-favicon_portfolio-1-32x32.png
+  icon:
+    logo: https://nsabater.com/wp-content/uploads/2022/06/logo_nestor_sabater_transparent-1-e1656085989749.png
   features:
     - navigation.instant
     - navigation.instant.prefetch
