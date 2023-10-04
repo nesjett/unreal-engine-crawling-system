@@ -27,9 +27,9 @@ markdown_extensions:
 
 theme:
   name: material
-  favicon: https://nsabater.com/wp-content/uploads/2016/11/cropped-favicon_portfolio-1-32x32.png
+  favicon: assets/favicon.png
   icon:
-    logo: https://nsabater.com/wp-content/uploads/2022/06/logo_nestor_sabater_transparent-1-e1656085989749.png
+    logo: assets/logo.png
   features:
     - navigation.instant
     - navigation.instant.prefetch
