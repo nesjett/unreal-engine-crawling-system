@@ -18,7 +18,6 @@ nav:
 theme:
   features:
     - navigation.instant
-    - navigation.instant.progress
 
 
 
