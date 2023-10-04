@@ -9,6 +9,8 @@ copyright: All rights reserved
 
 nav: 
   - 'index.md'
+  - 'content.md'
+  - 'faq.md'
 
 markdown_extensions:
   - customblocks
