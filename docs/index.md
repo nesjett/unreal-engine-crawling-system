@@ -41,11 +41,20 @@ This systems DO NOT allow to crawl freely on the game, but to follow a spline ba
 
 !!! note
 
-    Since Unreal Engine version 4.27, the Crawling System is a component based package, making it easy to integrate into any existing project by simply using interfaces and components.
+    Since Unreal Engine **version 4.27+**, the Crawling System is a component based package, making it easy to integrate into any existing project by simply using interfaces and components.
+    you can find the **legacy package documentation** in the following document: [Legacy documentation page](https://redirect.epicgames.com/?redirectTo=http://bit.ly/ue4-crawling-sys-docs)
 
 
 
 ![Package content](./images/cs-package-content.jpg){ loading=lazy }
+
+* Debuggin and setup elements: Game Mode, Player Controller, HUD, Widged with options.
+* Core route Actor: Allows interacting with the route path.
+* Example Characters: 
+    * 2 Player characters with input bindings.
+    * 1 AI character with basic movement functionality.
+
+
 
 ## Technical considerations
 
