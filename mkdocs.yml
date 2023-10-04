@@ -8,6 +8,8 @@ copyright: All rights reserved
 
 markdown_extensions:
   - customblocks
+  - attr_list
+  - md_in_html
 
 nav:
   - Home: '/'
