@@ -1,24 +1,43 @@
 # Crawling System for Unreal Engine
 
+::: youtube Nf-1ZlxaScM
+
 The **Crawling System** for Unreal Engine is a framework that will empower you with a crawling system like the one seen in “Dead Space” or “Erie” games, allowing you to easily make paths that the player can “enter” and follow while crawling in the ground.  
 
 This systems DO NOT allow to crawl freely on the game, but to follow a spline based path forward (or backwards) with some nice animations.
 
-::: youtube Nf-1ZlxaScM
-
 ::: youtube 22P4r7rWidc
 
 ## Key features
-- *Spline based* routes: The user can only move along a spline path. 
-- **Ground detection** for correct player positioning: No need to worry about pixel-perfect placement of your spline path.
-- **Basic hand IK** placement for accurate ground positioning: Character hands can align (up to a point) with the ground to make it look better on uneven floors.
-- *Double or single* direction routes
-- Per instance **exit limits**: Configure how far from the exit the player must be in order of exiting the crawl mode.
-- *Auto interaction to enter/exit* route on proximity
-- **Forward and backwards** movement: Configure if you want to allow player to move backwards while inside the crawling mode or not.
-- **Configurable movement speed** (independent for *forward & backwards*)
-- Camera movement animations: Example on how to coordinate camera movements with the brace animations.
-- **Camera limits** when crawling: Avoids rotating the camera backwards.
-- Arm animations when crawling: Arm animations will never stop mid-air. If the player stops pressing the movement key, the animation will finish.
-- Arms orientation depending on ground direction (thanks to ground detection)
+- Spline based routes
+- First & Third person character examples + AI
+- Compatible with ALS (Advanced Locomotion System v4)
+- Simple IK hand placement setup (hands adapt to the ground height)
+- Examples for all
+- Ground detection for first person arms
+- Option to rotate by ground detection or spline point rotation
+- Visual debugging options
+- Double or single direction routes
+- Per instance exit limit distance (distance to the end for the player to "take off", for both sides independently)
+- Per instance exit location (Where the player will move automatically when exiting)
+- Auto interaction when approaching the entrance/exit
+- Forward and backwards movement (backwards movement can be disabled per route)
+- Configurable speed (independent for moving forward/backward)
+- Camera shake on movement (is not an actual camera shake but rotation applied based on bone rotation, so you can control it from within the animation)
+- Arm/Body animations can't be stopped half the way (animation always ensures both hands are on ground)
+- Arms/Body are orientated to the direction of the spline, letting you create routes of any kind
+- Camera limits
+
+## Package content
+
+!!! note
+
+    Since Unreal Engine version 4.27, the Crawling System is a component based package, making it easy to integrate into any existing project by simply using interfaces and components.
+
+
+
+![Package content](./images/cs-package-content.jpg){ loading=lazy }
+
+## Technical considerations
+
 
