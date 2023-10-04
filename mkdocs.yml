@@ -19,12 +19,7 @@ theme:
   features:
     - navigation.instant
     - navigation.instant.progress
-    - navigation.tracking
-    - navigation.sections
-    - navigation.path
-    - toc.follow
-    - toc.integrate
-    - navigation.footer
+
 
 
 extra:
