@@ -2,11 +2,20 @@
 
 ::: youtube Nf-1ZlxaScM
 
+🎉 The simplest yet porwerfull Crawling System for Unreal Engine 🎉
+
+![Static Badge](https://img.shields.io/badge/Engine_version-4.23%2B%2C_5.0%2B-brightblue?style=for-the-badge&logo=unrealengine&color=lightblue)
+![Static Badge](https://img.shields.io/badge/Copies_sold-100%2B-brightblue?style=for-the-badge&color=brightgreen)
+
+
+
 The **Crawling System** for Unreal Engine is a framework that will empower you with a crawling system like the one seen in “Dead Space” or “Erie” games, allowing you to easily make paths that the player can “enter” and follow while crawling in the ground.  
 
 This systems DO NOT allow to crawl freely on the game, but to follow a spline based path forward (or backwards) with some nice animations.
 
 ::: youtube 22P4r7rWidc
+
+
 
 ## Key features
 - Spline based routes
@@ -40,4 +49,4 @@ This systems DO NOT allow to crawl freely on the game, but to follow a spline ba
 
 ## Technical considerations
 
-
+TODO: Describe the technical implementation and things to take into account. (performance etc)
