@@ -13,8 +13,6 @@ markdown_extensions:
 
 nav:
   - Home: '/'
-  - 'User Guide': 'user-guide.md'
-  - 'Bug Tracker': '/bugs/'
 
 
 theme:
@@ -31,7 +29,3 @@ theme:
     - navigation.footer
 
 
-extra:
-  social:
-    - icon: fontawesome/brands/discord
-      link: https://discord.com/channels/685799359308365851/685799359765676064
