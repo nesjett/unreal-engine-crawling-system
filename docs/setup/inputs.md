@@ -1,11 +1,3 @@
-# Using the base Route Actor in the world
-
-# Creating your own Route Actors
-
-# Adding Crawling movement to your Character
-
-# Integrating with ALS v4
-
 # Setting up Player Inputs
 
 This package is installed into existing projects and thus sometimes the control Inputs might not be set up in the Game.
