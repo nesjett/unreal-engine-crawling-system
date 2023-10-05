@@ -9,11 +9,7 @@ copyright: All rights reserved
 
 nav: 
   - 'index.md'
-  - Section:
-    - content/index.md
-    - content/character-state.md
-    - content/door-type.md
-    - content/movement-direction.md
+  - 'content.md'
   - 'faq.md'
 
 markdown_extensions:
