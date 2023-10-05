@@ -33,6 +33,8 @@ theme:
   name: material
   favicon: favicon.png
   logo: assets/logo.png
+  icon:
+    repo: fontawesome/brands/unrealengine
   features:
     - navigation.instant
     - navigation.instant.prefetch
