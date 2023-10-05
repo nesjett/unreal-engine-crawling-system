@@ -10,6 +10,7 @@ copyright: All rights reserved
 nav: 
   - 'index.md'
   - 'content.md'
+  - 'setup.md'
   - 'faq.md'
 
 markdown_extensions:
