@@ -143,10 +143,100 @@ This is how it should look for ALS v4:
     This function can be copied from the *Crawling System* Third Person Character, so you can copy/paste from there.
     ![Toggle player input helper](../images/setup/als-integration/toggle-player-input-helper.jpg){loading=lazy}
 
-## 5. Retarget the crawling animation (Optional)
+## 5. Retarget the crawling animation (optional)
 
 !!! note
     This step is optional, as you might have your own crawling animations that don't require retargetting the provided one.
 
 ![Retargetting the animation](../images/setup/als-integration/retargetting-animation.webp){loading=lazy}
 
+## 6. Setup your own animation (optional)
+
+!!! warning "Animation notifies setup"
+    If you want to use your own animation (and not do a retargetting as in step 5) this 6th step is mandatory.
+
+The animation for the *Driver skeleton* (the one setup in the previous steps) need to have some notifies to ensure the *steps* are detected.
+
+To do so, simply go to the animation editor and right click on the notifies track:
+
+![Step notifies](../images/setup/als-integration/anim-steps.jpg){loading=lazy}
+
+
+!!! note
+    If you fail doing this, the character will never stop moving until it reaches the end of the path.
+
+!!! warning
+    If you use the provided animation with the pack, you will notice that the retargeted animation is not looking good at all in the ALS skeleton. This is due to the retaget tool and can be improved by tweaking manually some bone mapping on the base poses before retargeting. You can find guides on doing so in the Unreal Engine forums and documentation.
+
+## 7. Setup the Animation Blueprint
+
+!!! note
+    ALS Anim BP is very complex, so we are not going to dig deeply into the system. For this tutorial we are going to make a whole new state that does not interfere with anything already setup in the example ALS Anime BP.
+
+    !!! note "Not only ALS"
+        This step is the same you should follow on any other *Character*
+
+### 1. Set *Direction* and *CrawlingState* properties
+
+The animation requires from a *Direction* and a *CrawlingState* properties to work properly.
+
+The setup is very simple and can be done as in the following images:
+
+![Anim BP setup](../images/setup/als-integration/animbp-props.jpg){loading=lazy}
+![Anim BP setup soomed](../images/setup/als-integration/animbp-props-zoom.jpg){loading=lazy}
+
+
+### 2. Create a new *State Machine*
+
+Create a new *State Machine* and connect It **before** the output pose to a blend pose, using our *CrawlingState* vabialbe as filter.
+
+!!! note
+    This setup ensure that all the ALS things run properly when we are not crawling, and we just blend to our new Crawling *State Machine* when required.
+
+!!! tip
+    You can copy the “Ragdoll States” state machine and delete It’s content
+
+![New state machine](../images/setup/als-integration/state-machine.jpg){loading=lazy}
+
+
+### 3. Populate the new *State Machine*
+
+Add a new state in the *Crawling states* State Machine we have just created in the previous step.
+
+The name for this state is not important.
+
+![State machine content](../images/setup/als-integration/state-machine-content.webp){loading=lazy}
+
+### 4. Add your Crawl animation to the *State Machine*
+
+!!! info
+    It is **VERY IMPORTANT** to set the sync group properly, as the image below shows
+
+!!! note
+    You must implement the *play rate* pin using the direction variable we declared earlier in this guide.
+
+!!! warning
+    If you do not do this step properly, you will either see the character never stopping when It enters the route or It will play the forward crawling animation always, even when you stop or go backwards.
+
+![Set animation to play](../images/setup/als-integration/set-animation-in-state-machine.jpg){loading=lazy}
+
+
+## 8. Set collisions for the skeleton
+
+The Crawling System uses a line trace to determine where the ground is placed. 
+
+We need to properly set collision channels to work as expected.
+
+!!! warning
+    By default, ALS skeletal mesh has the collision property *Block* checked for the channel *Visibility*. This will cause the Crawling System trace to collide with the mesh and return wrong locations, making the character look glitchy.
+
+![Set collision channels](../images/setup/als-integration/collision-channels.jpg){loading=lazy}
+
+
+# Conclusion
+
+This Guide can be used for any kind of custom character, as there are only a couple of details/nodes specific to ALS.
+
+´The final result should look like the following:
+
+::: youtube 22P4r7rWidc
