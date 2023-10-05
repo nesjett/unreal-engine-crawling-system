@@ -14,7 +14,7 @@ While sometimes this is just fine so that you can customize them to your own gam
 
 Because of this. I prepared a [CrawlingSystemInputs.ini](files/CrawlingSystemInputs.ini) file that you can download and import direclty into your game configuration.
 
-![Importing a config file](./images/import-inputs-config.jpg){ loading=lazy }
+![Importing a config file](../images/import-inputs-config.jpg){ loading=lazy }
 
 !!! note
     This Inputs file will not only add the required Inputs but also set to defaults the whole config related to Inputs.
