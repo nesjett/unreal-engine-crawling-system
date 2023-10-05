@@ -16,3 +16,17 @@
     width:100%;
     height:100%;
 }
+
+
+.badge.badge-normal .title {
+    background-color: rgb(85, 85, 85);
+    border-radius: 0 !important;
+    color: rgb(255, 255, 255);
+}
+
+.badge.badge-normal .value {
+    background-color: lightblue;
+    border-radius: 0 !important;
+    color: rgb(51, 51, 51);
+    font-weight: bold;
+}
