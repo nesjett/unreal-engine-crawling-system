@@ -8,13 +8,13 @@ site_author: Nestor Sabater
 copyright: All rights reserved
 
 nav: 
-  - 'index.md'
+  - Home: 'index.md'
   - 'content.md'
-  - Setup:
+  - Getting started:
     - 'setup/index.md'
     - 'setup/inputs.md'
     - 'setup/integrating-als-v4.md'
-  - 'faq.md'
+  - FAQ: 'faq.md'
 
 markdown_extensions:
   - customblocks
