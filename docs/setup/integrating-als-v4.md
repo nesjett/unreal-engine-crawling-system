@@ -6,7 +6,6 @@ For showcase porpurse, we will be integrating it into ALS v4 (Advanced Locomotio
 
 This package is component based, so adding the required functionality to existing characters takes only a few steps and should not interfere with any existing code.
 
-# Implementation
 ## 1. Crawling Movement component
 
 This system includes a *Crawling Movement* component.
