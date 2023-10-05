@@ -1,3 +1,5 @@
+L|SUPPORT ON|https://discord.com/channels/685799359308365851/685799359765676064|.discord-icon|
+
 ## Does it use one skeletal mesh or more?
 
 The system uses 1 skeletal mesh out of the box, for the arms when crawling. It uses the Epic skeleton as base. 
