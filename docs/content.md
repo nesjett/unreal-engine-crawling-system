@@ -1,7 +1,7 @@
 # Content reference
 
 ## Base route Actor
-|Type|Blueprint|
+|Type|Blueprint Actor|
 |File|CS_RouteActor|
 
 The Route Actor is the main blueprint to create routes.
@@ -43,6 +43,8 @@ The actor also provides configurable parameters that will allow you to modify th
 
 
 ## Crawling Movement component
+|Type|Blueprint Component|
+|File|CrawlingMovement|
 
 ![Component icon](./images/content/component.jpg){ loading=lazy align=left }
 

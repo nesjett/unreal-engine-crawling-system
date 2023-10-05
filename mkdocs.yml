@@ -14,6 +14,7 @@ nav:
     - 'setup/index.md'
     - 'setup/inputs.md'
     - 'setup/integrating-als-v4.md'
+    - 'setup/creating-routes.md'
   - FAQ: 'faq.md'
 
 markdown_extensions:
