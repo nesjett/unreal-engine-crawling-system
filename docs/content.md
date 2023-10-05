@@ -41,6 +41,35 @@ The actor also provides configurable parameters that will allow you to modify th
     All this configuration should be customized in your own child Actors not in this Base one.
     Refer to the [Setup section](setup.md) to read more on implementing and customizing it into your game.
 
+
+## Crawling Movement component
+
+![Component icon](./images/content/component.jpg){ loading=lazy align=left }
+
+The *Crawling Movement* component is the base element for this package, and It contains all the logics to handle state changes, movement when crawling and various events happening during that action.
+
+It also provides a CrawlingTick that only "Ticks" when we are in Crawling State.
+This is usefull to implement some logic that might be needed by the implementers.
+
+It can only be added to Actors of type *Pawn* or children of It (like *Character*).
+
+!!! tip
+    The system provides some debug errors if the Component is not properly setup, like: "ERROR INIT01: The owner actor must be of type Pawn or a child of It"
+
+### Internal implementation
+
+The component is as self contained as possible, and follows the best practices.
+
+Here you can see the composition of it Graph:
+![Component icon](./images/content/component-graphs.jpg){ loading=lazy align=left }
+![Component icon](./images/content/component-tick.jpg){ loading=lazy align=right }
+(Note the tick only runs when we are actively crawling)
+
+Here you can see a piece of it's internal functions so that you can get an idea of it's implementation patterns:
+
+![Component icon](./images/content/component-functions.jpg){ loading=lazy }
+
+
 ## Character state
 |Type|Enum|
 |File|CS_CharacterState|
