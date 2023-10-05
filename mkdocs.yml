@@ -12,7 +12,7 @@ nav:
   - 'content.md'
   - Setup:
     - 'setup.md'
-    - 'inputs.md'
+    - 'setup/inputs.md'
   - 'faq.md'
 
 markdown_extensions:
