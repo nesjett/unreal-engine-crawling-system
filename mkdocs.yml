@@ -13,7 +13,7 @@ nav:
   - Setup:
     - 'setup/index.md'
     - 'setup/inputs.md'
-    - 'setup/integratin-als-v4.md'
+    - 'setup/integrating-als-v4.md'
   - 'faq.md'
 
 markdown_extensions:
