@@ -13,6 +13,7 @@ This system includes a *Crawling Movement* component.
 
 ### Add the Crawling Movement component
 You need to add it to your *Character* blueprint:
+
 ![Add interface to character](../images/setup/als-integration/add-component.jpg){ loading=lazy }
 
 The resulting component should look like this:
