@@ -44,12 +44,12 @@ theme:
     - navigation.instant.prefetch
     - navigation.instant.progress
     - navigation.tracking
-    - navigation.sections
-    - navigation.expand
+    #- navigation.sections
+    #- navigation.expand
     - navigation.path
     - toc.follow
-    - toc.integrate
-    - navigation.top
+    #- toc.integrate
+    #- navigation.top
     - navigation.footer
 
 extra_css:
