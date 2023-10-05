@@ -75,6 +75,8 @@ Here you can see a piece of it's internal functions so that you can get an idea 
 ![Component icon](./images/content/component-functions.jpg){ loading=lazy }
 
 ## Example Characters
+|Type|Character blueprint|
+|File|Multiple|
 
 ![Characters](./images/content/characters.jpg){ loading=lazy }
 
