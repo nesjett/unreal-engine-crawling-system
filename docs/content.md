@@ -81,11 +81,11 @@ Here you can see a piece of it's internal functions so that you can get an idea 
 The package includes 3 example characters:
 `CS_FirstPerson_Character`
 
-    This is the most elaborated character, as it includes not only movement behaviour but also an extra skeleton to handle crawling animations, camera effects and better transitions.
+:    This is the most elaborated character, as it includes not only movement behaviour but also an extra skeleton to handle crawling animations, camera effects and better transitions.
 
 `CS_ThirdPerson_Character`
 
-    This character is a **simplified version of the First person** one.
+:    This character is a **simplified version of the First person** one.
 
     It provides the **minimal setup** to make the *Crawling Component* work.
 
@@ -93,7 +93,7 @@ The package includes 3 example characters:
 
 `CS_AI_Character`
 
-    This is very **similar to the Third person character**, but it is made to work with AI instead of being controlled by players.
+:    This is very **similar to the Third person character**, but it is made to work with AI instead of being controlled by players.
 
     The implementation only makes them always move forward. If they collide with a route entrance, they will go to crawling mode and continue moving forward until the reach the exit.
 
@@ -113,23 +113,23 @@ Although, note that this tools are usefull during development phases for your ga
 
 `CS_GameMode`
     
-    The only goal of this *Game Mode* is to configure all the required Classes for your game.
+:    The only goal of this *Game Mode* is to configure all the required Classes for your game.
 
     It is used in the example map to set the HUD, Controller, etc for the showcase map.
 
 `CS_HUD_debug`
 
-    This *HUD* class is used to retrieve the player crawling state/config and update it on the HUD_Widget.
+:    This *HUD* class is used to retrieve the player crawling state/config and update it on the HUD_Widget.
 
 `CS_HUD_Widget_debug`
 
-    This widget holds the texts to draw the different configuration options in the UI during gameplay.
+:    This widget holds the texts to draw the different configuration options in the UI during gameplay.
 
     It is only used to show data. Does NOT interfere with any gameplay aspect.
 
 `CS_PlayerController_debug`
 
-    This *Controller* only exists to allow debugging with new pawns on different views.
+:    This *Controller* only exists to allow debugging with new pawns on different views.
 
     It holds a binding to key "5" in your keyboard to toggle your pawn between First person and Third person views.
 
