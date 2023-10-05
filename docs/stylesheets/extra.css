@@ -23,6 +23,7 @@
     text-rendering: geometricprecision !important;
     font-weight: 100 !important;
     font-size: 0.65rem !important;
+    text-transform: uppercase;
 }
 
 .badge .title {
