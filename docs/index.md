@@ -18,24 +18,25 @@ This systems DO NOT allow to crawl freely on the game, but to follow a spline ba
 
 
 ## Key features
-- Spline based routes
-- First & Third person character examples + AI
+- **Spline based** routes
+- **Performant**
+- First & Third person **character examples** + AI
 - Compatible with ALS (Advanced Locomotion System v4)
-- Simple IK hand placement setup (hands adapt to the ground height)
+- **Simple IK hand placement** setup (hands adapt to the ground height)
 - Examples for all
-- Ground detection for first person arms
+- **Ground detection** for first person arms
 - Option to rotate by ground detection or spline point rotation
-- Visual debugging options
-- Double or single direction routes
-- Per instance exit limit distance (distance to the end for the player to "take off", for both sides independently)
-- Per instance exit location (Where the player will move automatically when exiting)
+- Visual **debugging tools**
+- Double or single **direction routes**
+- Per instance **exit limit** distance (distance to the end for the player to "take off", for both sides independently)
+- Per instance **exit location** (Where the player will move automatically when exiting)
 - Auto interaction when approaching the entrance/exit
-- Forward and backwards movement (backwards movement can be disabled per route)
-- Configurable speed (independent for moving forward/backward)
+- **Forward and backwards movement** (backwards movement can be disabled per route)
+- **Configurable speed** (independent for moving forward/backward)
 - Camera shake on movement (is not an actual camera shake but rotation applied based on bone rotation, so you can control it from within the animation)
-- Arm/Body animations can't be stopped half the way (animation always ensures both hands are on ground)
+- Arm/Body animations can't be stopped half the way (animation always ensures **both hands are on ground**)
 - Arms/Body are orientated to the direction of the spline, letting you create routes of any kind
-- Camera limits
+- **Camera limits**
 
 ## Package content
 
