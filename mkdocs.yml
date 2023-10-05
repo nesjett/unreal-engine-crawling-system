@@ -30,7 +30,7 @@ markdown_extensions:
 
 theme:
   name: material
-  favicon: assets/favicon.png
+  favicon: favicon.png
   logo: assets/logo.png
   features:
     - navigation.instant
