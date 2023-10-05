@@ -11,8 +11,9 @@ nav:
   - 'index.md'
   - 'content.md'
   - Setup:
-    - 'setup.md'
+    - 'setup/index.md'
     - 'setup/inputs.md'
+    - 'setup/integratin-als-v4.md'
   - 'faq.md'
 
 markdown_extensions:
