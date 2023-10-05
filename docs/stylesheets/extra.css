@@ -29,6 +29,8 @@
     background-color: rgb(85, 85, 85) !important;
     border-radius: 0 !important;
     color: rgb(255, 255, 255) !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
 }
 
 .badge .value {
@@ -36,4 +38,6 @@
     border-radius: 0 !important;
     color: rgb(51, 51, 51) !important;
     font-weight: bold !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
 }
