@@ -17,6 +17,12 @@
     height:100%;
 }
 
+.badge {
+    font-family: Verdana, Geneva, "DejaVu Sans", sans-serif;
+    text-anchor: middle;
+    text-rendering: geometricprecision;
+    font-size: 100;
+}
 
 .badge .title {
     background-color: rgb(85, 85, 85);
