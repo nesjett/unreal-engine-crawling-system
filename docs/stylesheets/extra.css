@@ -18,21 +18,21 @@
 }
 
 .badge {
-    font-family: Verdana, Geneva, "DejaVu Sans", sans-serif;
-    text-anchor: middle;
-    text-rendering: geometricprecision;
-    font-size: 100;
+    font-family: Verdana, Geneva, "DejaVu Sans", sans-serif !important;
+    text-anchor: middle !important;
+    text-rendering: geometricprecision !important;
+    font-size: 100 !important;
 }
 
 .badge .title {
-    background-color: rgb(85, 85, 85);
+    background-color: rgb(85, 85, 85) !important;
     border-radius: 0 !important;
-    color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255) !important;
 }
 
 .badge .value {
-    background-color: lightblue;
+    background-color: lightblue !important;
     border-radius: 0 !important;
-    color: rgb(51, 51, 51);
-    font-weight: bold;
+    color: rgb(51, 51, 51) !important;
+    font-weight: bold !important;
 }
