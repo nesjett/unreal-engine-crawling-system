@@ -36,7 +36,7 @@ theme:
   favicon: favicon.png
   logo: assets/logo.png
   icon:
-    repo: fontawesome/brands/unrealengine
+    repo: simple/unrealengine
   features:
     - navigation.instant
     - navigation.instant.prefetch
