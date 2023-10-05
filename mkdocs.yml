@@ -51,6 +51,7 @@ extra_css:
 plugins:
   #- optimize
   - tags
+  - badges
 
 
 extra:
