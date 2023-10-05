@@ -31,8 +31,7 @@ markdown_extensions:
 theme:
   name: material
   favicon: assets/favicon.png
-  icon:
-    logo: assets/logo.png
+  logo: assets/logo.png
   features:
     - navigation.instant
     - navigation.instant.prefetch
