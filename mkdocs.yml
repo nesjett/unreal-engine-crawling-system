@@ -10,7 +10,7 @@ copyright: All rights reserved
 nav: 
   - 'index.md'
   - 'content.md'
-  Setup:
+  - Setup:
     - 'setup.md'
     - 'inputs.md'
   - 'faq.md'
