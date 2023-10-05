@@ -9,7 +9,11 @@ copyright: All rights reserved
 
 nav: 
   - 'index.md'
-  - 'content.md'
+  - Section:
+    - content/index.md
+    - content/character-state.md
+    - content/door-type.md
+    - content/movement-direction.md
   - 'faq.md'
 
 markdown_extensions:
@@ -37,7 +41,7 @@ theme:
     - navigation.instant.prefetch
     - navigation.instant.progress
     - navigation.tracking
-    - navigation.sections
+    #- navigation.sections
     - navigation.expand
     - navigation.path
     - toc.follow
