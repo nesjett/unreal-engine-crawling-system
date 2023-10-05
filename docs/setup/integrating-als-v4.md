@@ -2,7 +2,8 @@
 
 This is a step by step guide to integrate the Crawling System for UE 4.24+ into any existing character.
 
-For showcase porpurse, we will be integrating it into ALS v4 (Advanced Locomotion System)
+!!! note
+    For showcase porpurse, we will be integrating it into ALS v4 (Advanced Locomotion System)
 
 This package is component based, so adding the required functionality to existing characters takes only a few steps and should not interfere with any existing code.
 
