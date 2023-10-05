@@ -74,6 +74,30 @@ Here you can see a piece of it's internal functions so that you can get an idea 
 
 ![Component icon](./images/content/component-functions.jpg){ loading=lazy }
 
+## Example Characters
+
+![Characters](./images/content/characters.jpg){ loading=lazy }
+
+The package includes 3 example characters:
+`CS_FirstPerson_Character`
+
+    This is the most elaborated character, as it includes not only movement behaviour but also an extra skeleton to handle crawling animations, camera effects and better transitions.
+
+`CS_ThirdPerson_Character`
+
+    This character is a **simplified version of the First person** one.
+
+    It provides the **minimal setup** to make the *Crawling Component* work.
+
+    This is the best Character to look for implementation details, as it is the simplest and easier to understand.
+
+`CS_AI_Character`
+
+    This is very **similar to the Third person character**, but it is made to work with AI instead of being controlled by players.
+
+    The implementation only makes them always move forward. If they collide with a route entrance, they will go to crawling mode and continue moving forward until the reach the exit.
+
+
 ## Debuggin elements
 |Type|Miscellaneous|
 |File|Multiple|
