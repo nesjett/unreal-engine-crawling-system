@@ -4,22 +4,41 @@
 |Type|Blueprint Actor|
 |File|CS_RouteActor|
 
-The Route Actor is the main blueprint to create routes.
+The Route Actor is an *Actor* with all the required setup to interact with your *Character*.
 
-It provides a Spline component with a 2 Collision spheres, one on each side.
+This is an example immplementation that can be directly used in your game/world if you want to design fast or you do not need of Mesh deformations to make it a specific "object" that can be placed multiple times in your game.
+![Route actor](./images/content/route-actor.jpg){ loading=lazy align=left }
 
-This collision spheres are used to enable/trigger the action to enter the route and start crawling along the Spline.
+!!! note
+    If you want to create a new Actor Blueprint to create a specific shape that can be reused, aswell as adding custom functionality and meshes, read the [Setup Section](./setup/creating-routes.md)
+
 
 !!! note
     In this actor, **nothing should be manually edited** unless you have very specific needs. This is a base Actor to extend your custom ones from.
-    Refer to the [Setup section](setup.md) to read more on implementing and customizing it into your game.
+    Refer to the [Setup section](setup.md) to read more on creating your own Route Actors
 
+
+### Content
 ![Route Actor Viewport](./images/route-actor-viewport.jpg){ loading=lazy }
 
-It also provides a few visual debugging elements:
+This Blueprint implements the following:
+`1 Spline Component`
 
-- **Leave cover distance**: This box is a visual representation of the point where the Character will leave the route (stop crawling and come back to walking)
-- **Leave cover location**: This arrow lets you see the location the Character will move when exiting the route. This is the exact location the Character will have when It comes back to walking.
+:   This Spline is the path that the character will move along when Crawling.
+
+`2 Collision Spheres`
+
+:   This spheres will check if the Route is enabled and if the colliding Actor has an instance of the *Crawling Movement Component*.
+
+`Leave cover distance`
+
+:   This box is a visual representation of the point where the Character will leave the route (stop crawling and come back to walking)
+
+`Leave cover location`
+
+:   This arrow lets you see the location the Character will move when exiting the route. This is the exact location the Character will have when It comes back to walking.
+
+
 
 
 ### Configuration
