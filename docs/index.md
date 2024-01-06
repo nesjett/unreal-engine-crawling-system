@@ -21,23 +21,22 @@ This systems DO NOT allow to crawl freely on the game, but to follow a spline ba
 ## Key features
 - **Spline based** routes
 - **Performant**
+- Documentation + video & written tutorials
 - First & Third person **character examples** + AI
 - Compatible with ALS (Advanced Locomotion System v4)
-- **Simple IK hand placement** setup (hands adapt to the ground height)
-- Examples for all
-- **Ground detection** for first person arms
-- Option to rotate by ground detection or spline point rotation
-- Visual **debugging tools**
+- **IK hand placement** setup: Hands adapt to the ground height and rotation
+- Examples and caveats provided.
+- Optional **Ground detection**: No need to worry about pixel-perfec spline placement.
+- **Debugging tools**
 - Double or single **direction routes**
-- Per instance **exit limit** distance (distance to the end for the player to "take off", for both sides independently)
-- Per instance **exit location** (Where the player will move automatically when exiting)
-- Auto interaction when approaching the entrance/exit
-- **Forward and backwards movement** (backwards movement can be disabled per route)
-- **Configurable speed** (independent for moving forward/backward)
-- Camera shake on movement (is not an actual camera shake but rotation applied based on bone rotation, so you can control it from within the animation)
-- Arm/Body animations can't be stopped half the way (animation always ensures **both hands are on ground**)
-- Arms/Body are orientated to the direction of the spline, letting you create routes of any kind
-- **Camera limits**
+- Per instance **exit limit & location** configuration: Determine freely and independently where the character is going to take off of the route and where it is going to be located when character activates walking movement.
+- Customizable behavior to enter the route, with examples provided.
+- **Forward and backwards movement** (backwards movement can be disabled per route instance)
+- Properties and route can be modified during runtime.
+- **Configurable speed** per character: Independent for moving forward/backward
+- Control camera shaking movement from bone animations when crawling.
+- Arm/Body animations can't be stopped half the way: Animation always ensures **both hands are on ground**
+- Configurable **Camera limits**
 
 ## Package content
 
@@ -67,7 +66,5 @@ This systems DO NOT allow to crawl freely on the game, but to follow a spline ba
 ## Technical considerations
 
 The system **completly avoids using tick events** on the routes, so it is performant at any scale.
-
-Entering/Leaving a route is handled through *On Overlap* events with the entrance/exit collision areas.
 
 The animations for the first person Character arms can be used in production, but they are not optimal (the package focuses on functionality) which means that **the rig might fail for other skeletons**. It is also slightly adjusted on rotation and position inside the implementer blueprints.
