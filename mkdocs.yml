@@ -16,6 +16,7 @@ nav:
     - 'setup/integrating-als-v4.md'
     - 'setup/creating-routes.md'
   - FAQ: 'faq.md'
+  - Changelog: 'CHANGELOG.md'
 
 markdown_extensions:
   - customblocks
