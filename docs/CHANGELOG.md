@@ -10,6 +10,7 @@
 - Made CS_FirstPersonCharacter camera rotate by using the native "controller pitch and yaw" instead of using custom relative rotations.
 - Debug widget (Player UI) now works with any Actor that implements the CS_Debug_Interface.
 - Added a debugging widget to Actors that implement the CrawlingMovement component to visually see information when debug option is ON.
+- Created interface for debugging, pawn and route actors. This provides easier ways to execute/request logic in custom Actors.
 
 ## Fix
 - Debug widget performance improved and refactored.
