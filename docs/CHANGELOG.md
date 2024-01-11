@@ -3,10 +3,13 @@
 ## Feat
 - Unreal Engine 5.3+ support.
 - Improve hand IK placement and rotation.
-- Debug widget now works with any character that implements the CS_Debug_Interface.
-- Refactor of the CS_MovementComponent.
-- Created global helper functions in library plugin.
+- Refactor of the CrawlingMovement component.
+- Created global helper functions in library blueprint, listed under the "Crawling System" category.
 - Added an AI example that follows the player inside and outside of routes.
+- Cleanup CS_FirstPersonCharacter: Moved debugging inputs to CS_PlayerController.
+- Made CS_FirstPersonCharacter camera rotate by using the native "controller pitch and yaw" instead of using custom relative rotations.
+- Debug widget (Player UI) now works with any Actor that implements the CS_Debug_Interface.
+- Added a debugging widget to Actors that implement the CrawlingMovement component to visually see information when debug option is ON.
 
 ## Fix
 - Debug widget performance improved and refactored.
