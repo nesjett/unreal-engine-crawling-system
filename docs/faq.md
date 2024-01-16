@@ -22,11 +22,11 @@ The package tries not using tick events except when it is strictly necessary, an
 
 Having said that, you game might require higher levels of optimization or more specific ways to work. For those cases, you can reach out on the :simple-discord: [Discord support channel](https://discord.com/channels/685799359308365851/685799359765676064) to ask for guidance.
 
-## Does the system work for rolled grounds?
+## Does the system work for rolled/twisted grounds?
 
 The best conditions for the system are flat grounds. 
 
-Having said that, It might work with some up/down inclinations (not too big) and with some rolled grounds (not too much).
+Having said that, It should work with up/down hills and with some rolled/twisted grounds (not too rolled).
 
 If you want to have “stronger situations” or more specific ones, you should be able to tweak the system with easy, but that will require blueprint programming knowledge on your side.
 
@@ -34,7 +34,7 @@ If you want to have “stronger situations” or more specific ones, you should 
 
 Definetly not. 
 
-As stated earlier, the system tries to be as general as possible, which means that it comes with examples and preconfigurations for the wide variety of games that may need it. 
+As stated earlier, the system tries to be as general as possible, which means that it comes with examples and preconfigurations for a wide variety of games that may need it. 
 
 It also provides a good starting point for developing a deeper and more specific gameplay experience.
 
