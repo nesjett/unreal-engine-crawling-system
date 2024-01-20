@@ -19,23 +19,26 @@ This systems DO NOT allow to crawl freely on the game, but to follow a spline ba
 
 
 ## Key features
-- **Spline based** routes
-- **Performant**
-- Debugging tools
-- Documentation + video & written tutorials
+- **Spline based** routes.
+- 🚀 **Performant**.
+- Debugging tools included.
+- 💯 Follows best coding practices.
+- Includes automated functional tests.
+- 👓 Documentation + video & written tutorials
 - First & Third person **character examples** + AI
 - Compatible with ALS (Advanced Locomotion System v4)
-- **IK hand placement** setup: Hands adapt to the ground height and rotation
+- **IK hand placement** setup: Hands adapt to the ground height and rotation.
 - Examples and caveats provided.
 - **Ground detection**: No need to worry about pixel-perfec spline placement.
-- Double or single **direction routes**
+- 🚦 Double or single **direction routes**.
 - Per instance **exit limit & location** configuration: Determine freely and independently where the character is going to take off of the route and where it is going to be located when character activates walking movement.
 - Customizable behavior to enter the route, with examples provided.
-- **Forward and backwards movement**: Can be disabled per route instance and per character, at runtime.
+- ⛔ **Forward and backwards movement**: Can be disabled per route instance and per character, at runtime.
 - **Configurable speed** per character: Independent for moving forward/backward.
 - Control camera movement from bone animations when crawling (optionally).
-- Arm/Body animations always ensures **both hands are on ground** before stop moving.
-- Configurable **Camera limits**
+- 🧲 Movement animations always ensure **both hands are on ground** before stop moving.
+- 🎮 Supports keyboard & controllers
+- Configurable **Camera limits**.
 
 ## Package content
 
