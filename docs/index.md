@@ -21,21 +21,20 @@ This systems DO NOT allow to crawl freely on the game, but to follow a spline ba
 ## Key features
 - **Spline based** routes
 - **Performant**
+- Debugging tools
 - Documentation + video & written tutorials
 - First & Third person **character examples** + AI
 - Compatible with ALS (Advanced Locomotion System v4)
 - **IK hand placement** setup: Hands adapt to the ground height and rotation
 - Examples and caveats provided.
-- Optional **Ground detection**: No need to worry about pixel-perfec spline placement.
-- **Debugging tools**
+- **Ground detection**: No need to worry about pixel-perfec spline placement.
 - Double or single **direction routes**
 - Per instance **exit limit & location** configuration: Determine freely and independently where the character is going to take off of the route and where it is going to be located when character activates walking movement.
 - Customizable behavior to enter the route, with examples provided.
-- **Forward and backwards movement** (backwards movement can be disabled per route instance)
-- Properties and route can be modified during runtime.
-- **Configurable speed** per character: Independent for moving forward/backward
-- Control camera shaking movement from bone animations when crawling.
-- Arm/Body animations can't be stopped half the way: Animation always ensures **both hands are on ground**
+- **Forward and backwards movement**: Can be disabled per route instance and per character, at runtime.
+- **Configurable speed** per character: Independent for moving forward/backward.
+- Control camera movement from bone animations when crawling (optionally).
+- Arm/Body animations always ensures **both hands are on ground** before stop moving.
 - Configurable **Camera limits**
 
 ## Package content
@@ -49,7 +48,7 @@ This systems DO NOT allow to crawl freely on the game, but to follow a spline ba
 
 ![Package content](./images/cs-package-content.jpg){ loading=lazy }
 
-* **Debuggin** and setup elements: Game Mode, Player Controller, HUD, Widged with options.
+* **Debuggin** tools included: Info Widgets, iconography, etc.
 * **Core route** Actor: Allows interacting with the route path.
 * Example **routes**: 2 Actors implementing the route path with different features configured.
 * Example **Characters**: 
@@ -67,4 +66,4 @@ This systems DO NOT allow to crawl freely on the game, but to follow a spline ba
 
 The system **only** uses tick events when actively crawling, and only to move the character in the proper direction. The Route Components **DO NOT use** tick events, so the number of instances will not impact your performance.
 
-The animations for the first person Character arms can be used in production, but they are not optimal (the package focuses on functionality) which means that **the rig might fail for other skeletons**. It is also slightly adjusted on rotation and position inside the implementer blueprints.
+The animations for the first person Character arms can be used in production, but they are not optimal (the package focuses on functionality) which means that **the rig might not look good on other skeletons**. It is also slightly adjusted on rotation and position inside the implementer blueprints.

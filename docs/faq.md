@@ -22,6 +22,10 @@ The package tries not using tick events except when it is strictly necessary, an
 
 Having said that, you game might require higher levels of optimization or more specific ways to work. For those cases, you can reach out on the :simple-discord: [Discord support channel](https://discord.com/channels/685799359308365851/685799359765676064) to ask for guidance.
 
+## Can I have different Characters with different properties?
+
+Yes! You can add the crawling movement component to each character that you want to give the hability to crawl. There, you can set different parameters, like speed, backwards movement, etc.
+
 ## Does the system work for rolled/twisted grounds?
 
 The best conditions for the system are flat grounds. 
