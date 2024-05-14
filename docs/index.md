@@ -22,7 +22,9 @@ This systems DO NOT allow to crawl freely on the game, but to follow a spline ba
 - **Spline based** routes.
 - 🚀 **Performant**.
 - Debugging tools included.
-- 💯 Follows best coding practices.
+- 💯 Follows best coding practices!
+- Very easy to integrate with **ALL KIND OF CHARACTERS**, from humanoids to dogs, snakes or even aliens!
+- **Modular and component based**. Add a couple of components and interfaces and you are good to go.
 - Includes automated functional tests.
 - 👓 Documentation + video & written tutorials
 - First & Third person **character examples** + AI
