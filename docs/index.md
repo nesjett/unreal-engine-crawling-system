@@ -40,6 +40,15 @@ This systems DO NOT allow to crawl freely on the game, but to follow a spline ba
 - 🎮 Supports keyboard & controllers
 - Configurable **Camera limits**.
 
+## Philosophy
+- It is designed to allow any kind of character customization, from biped humanoids to animals and monsters of different sizes, meshes and properties.
+- Everything is modular and component based. Implementation into existing characters is easy by adding the right component and implementing interfaces.
+- Debugging tools are provided and separated from the functional code. You can get rid of it (or add it to existing projects) easily.
+- There is a set of functions (functions library) globally available that help on general tasks.
+- Everything, from functions to components to variables, is grouped. Contextual menu to search for items will not show unexpected results from this package.
+- Class functions are properly accessed (public, private or protected) depending on what they are for.
+- Comments are provided in-code to help understand the reason of some nodes or choices, as well as to add info about the examples.
+
 ## Package content
 
 !!! note
