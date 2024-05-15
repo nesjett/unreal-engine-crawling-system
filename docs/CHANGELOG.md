@@ -15,6 +15,7 @@
 - Add better comments to methods and nodes
 - Cleanup end of route checks + removed unused functions
 - CrawlingMovement component private methods have been converted to protected to facilitate customization by inheritance.
+- Event dispatchers have been setup in the CrawlingMovement to make it easier to react to different events.
 
 ## Fix
 - Debug widget performance improved and refactored.
