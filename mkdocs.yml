@@ -11,11 +11,11 @@ nav:
   - Home: 'index.md'
   - 'content.md'
   - Getting started:
-    - 'setup/index.md'
-    - 'setup/inputs.md'
-    - 'setup/integrating-als-v4.md'
-    - 'setup/creating-routes.md'
-  - FAQ: 'faq.md'
+    - 'pages/setup/index.md'
+    - 'pages/setup/inputs.md'
+    - 'pages/setup/integrating-als-v4.md'
+    - 'pages/setup/creating-routes.md'
+  - FAQ: 'pages/faq.md'
   - Changelog: 'CHANGELOG.md'
 
 markdown_extensions:
