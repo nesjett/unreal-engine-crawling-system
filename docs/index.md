@@ -2,7 +2,7 @@
 
 🎉 The simplest yet porwerfull Crawling System for Unreal Engine 🎉
 
-![Static Badge](https://img.shields.io/badge/Engine_version-4.23%2B%2C_5.0%2B-brightblue?style=for-the-badge&logo=unrealengine&color=lightblue)
+![Static Badge](https://img.shields.io/badge/Engine_version-4.23%2B%2C_5.2%2B-brightblue?style=for-the-badge&logo=unrealengine&color=lightblue)
 ![Static Badge](https://img.shields.io/badge/Copies_sold-100%2B-brightblue?style=for-the-badge&color=brightgreen)
 L|SUPPORT ON|https://discord.com/channels/685799359308365851/685799359765676064|.discord-icon|
 
