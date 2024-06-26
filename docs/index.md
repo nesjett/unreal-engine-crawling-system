@@ -6,9 +6,9 @@
 ![Static Badge](https://img.shields.io/badge/Copies_sold-100%2B-brightblue?style=for-the-badge&color=brightgreen)
 L|SUPPORT ON|https://discord.com/channels/685799359308365851/685799359765676064|.discord-icon|
 
-The **Crawling System** for Unreal Engine is a framework that will empower you with a crawling system like the one seen in “Dead Space” or “Erie” games, allowing you to easily make paths that the player can “enter” and follow while crawling in the ground.  
+The **Crawling System** for Unreal Engine is a robust framework that empowers you with a sophisticated crawling system akin to those seen in games like “Dead Space” or “Erie.” It allows players to "enter" and follow predefined paths while crawling on the ground, using spline-based navigation.
 
-This systems DO NOT allow to crawl freely on the game, but to follow a spline based path forward (or backwards) with some nice animations.
+This system does **not** support freeform crawling but instead guides the player along a spline-based path, both forward and backward, with smooth animations.
 
 ## Preview videos
 ::: youtube Nf-1ZlxaScM  
@@ -18,29 +18,38 @@ This systems DO NOT allow to crawl freely on the game, but to follow a spline ba
 
 
 
-## Key features
-- **Spline based** routes.
-- 🚀 **Performant**.
-- Debugging tools included.
-- 💯 Follows best coding practices!
-- Very easy to integrate with **ALL KIND OF CHARACTERS**, from humanoids to dogs, snakes or even aliens!
-- **Modular and component based**. Add a couple of components and interfaces and you are good to go.
-- Includes automated functional tests.
-- 👓 Documentation + video & written tutorials
-- First & Third person **character examples** + AI
-- Compatible with ALS (Advanced Locomotion System v4)
-- **IK hand placement** setup: Hands adapt to the ground height and rotation.
-- Examples and caveats provided.
-- **Ground detection**: No need to worry about pixel-perfec spline placement.
-- 🚦 Double or single **direction routes**.
-- Per instance **exit limit & location** configuration: Determine freely and independently where the character is going to take off of the route and where it is going to be located when character activates walking movement.
-- Customizable behavior to enter the route, with examples provided.
-- ⛔ **Forward and backwards movement**: Can be disabled per route instance and per character, at runtime.
-- **Configurable speed** per character: Independent for moving forward/backward.
-- Control camera movement from bone animations when crawling (optionally).
-- 🧲 Movement animations always ensure **both hands are on ground** before stop moving.
-- 🎮 Supports keyboard & controllers
-- Configurable **Camera limits**.
+## Key Features
+
+- **Spline-based Routes**
+  - 🚀 **Performant:** Optimized for high performance.
+  - **Debugging Tools:** Includes tools to help debug and refine your paths.
+  - 💯 **Best Coding Practices:** Clean, modular, and maintainable code.
+
+- **Integration**
+  - **Versatile:** Easy integration with all character types—humanoids, animals, and aliens.
+  - **Modular & Component-based:** Add components and interfaces effortlessly.
+  - **Automated Functional Tests:** Ensures system reliability.
+
+- **Examples & Compatibility**
+  - 👓 **Documentation:** Comprehensive docs with video and written tutorials.
+  - **Character Examples:** First and third-person character setups, including AI.
+  - **ALS Compatible:** Works with Advanced Locomotion System v4.
+
+- **IK Hand Placement**
+  - Hands adapt to the ground's height and rotation for realistic interactions.
+
+- **Route Configuration**
+  - 🚦 **Directional Flexibility:** Single or double direction routes.
+  - **Exit Limits & Locations:** Customize where and how characters exit the route.
+  - **Speed Configuration:** Independent speed settings for forward and backward movement.
+  - **Movement Control:** Forward and backward movement can be enabled or disabled per route and character, even at runtime.
+
+- **Camera and Animation Control**
+  - Control camera movement through bone animations while crawling.
+  - 🧲 **Movement Animations:** Ensures both hands are on the ground before stopping.
+  - 🎮 **Input Support:** Compatible with keyboard and controllers.
+  - **Camera Limits:** Configurable camera movement restrictions.
+
 
 ## Philosophy
 - It is designed to allow any kind of character customization, from biped humanoids to animals and monsters of different sizes, meshes and properties.
@@ -50,6 +59,7 @@ This systems DO NOT allow to crawl freely on the game, but to follow a spline ba
 - Everything, from functions to components to variables, is grouped. Contextual menu to search for items will not show unexpected results from this package.
 - Class functions are properly accessed (public, private or protected) depending on what they are for.
 - Comments are provided in-code to help understand the reason of some nodes or choices, as well as to add info about the examples.
+
 
 ## Package content
 
