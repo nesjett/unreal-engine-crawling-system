@@ -1,0 +1,1213 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Allow your players and AI to crawl along a spline with multiple options. Ready for first person and third person in Unreal Engine 4.X and 5.X">
+      
+      
+        <meta name="author" content="Nestor Sabater">
+      
+      
+        <link rel="canonical" href="https://nesjett.github.io/unreal-engine-crawling-system/pages/setup/integrating-als-v4/">
+      
+      
+        <link rel="prev" href="../inputs/">
+      
+      
+        <link rel="next" href="../creating-routes/">
+      
+      
+      <link rel="icon" href="../../../favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
+    
+    
+      
+        <title>Integrating with ALS v4 - Crawling System for Unreal Engine</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6543a935.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/badge.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-TSJPBQP642"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-TSJPBQP642",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-TSJPBQP642",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#integrating-with-als-v4" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Crawling System for Unreal Engine" class="md-header__button md-logo" aria-label="Crawling System for Unreal Engine" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Crawling System for Unreal Engine
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Integrating with ALS v4
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://www.unrealengine.com/marketplace/en-US/product/crawling-system-prone" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0a12 12 0 1 0 12 12A12 12 0 0 0 12 0zm0 23.52A11.52 11.52 0 1 1 23.52 12 11.52 11.52 0 0 1 12 23.52zm7.13-9.791c-.206.997-1.126 3.557-4.06 4.942l-1.179-1.325-1.988 2a7.338 7.338 0 0 1-5.804-2.978 2.859 2.859 0 0 0 .65.123c.326.006.678-.114.678-.66v-5.394a.89.89 0 0 0-1.116-.89c-.92.212-1.656 2.509-1.656 2.509a7.304 7.304 0 0 1 2.528-5.597 7.408 7.408 0 0 1 3.73-1.721c-1.006.573-1.57 1.507-1.57 2.29 0 1.262.76 1.109.984.923v7.28a1.157 1.157 0 0 0 .148.256 1.075 1.075 0 0 0 .88.445c.76 0 1.747-.868 1.747-.868V9.172c0-.6-.452-1.324-.905-1.572 0 0 .838-.149 1.484.346a5.537 5.537 0 0 1 .387-.425c1.508-1.48 2.929-1.902 4.112-2.112 0 0-2.151 1.69-2.151 3.96 0 1.687.043 5.801.043 5.801.799.771 1.986-.342 3.059-1.441Z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    UE Marketplace
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Crawling System for Unreal Engine" class="md-nav__button md-logo" aria-label="Crawling System for Unreal Engine" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    Crawling System for Unreal Engine
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://www.unrealengine.com/marketplace/en-US/product/crawling-system-prone" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0a12 12 0 1 0 12 12A12 12 0 0 0 12 0zm0 23.52A11.52 11.52 0 1 1 23.52 12 11.52 11.52 0 0 1 12 23.52zm7.13-9.791c-.206.997-1.126 3.557-4.06 4.942l-1.179-1.325-1.988 2a7.338 7.338 0 0 1-5.804-2.978 2.859 2.859 0 0 0 .65.123c.326.006.678-.114.678-.66v-5.394a.89.89 0 0 0-1.116-.89c-.92.212-1.656 2.509-1.656 2.509a7.304 7.304 0 0 1 2.528-5.597 7.408 7.408 0 0 1 3.73-1.721c-1.006.573-1.57 1.507-1.57 2.29 0 1.262.76 1.109.984.923v7.28a1.157 1.157 0 0 0 .148.256 1.075 1.075 0 0 0 .88.445c.76 0 1.747-.868 1.747-.868V9.172c0-.6-.452-1.324-.905-1.572 0 0 .838-.149 1.484.346a5.537 5.537 0 0 1 .387-.425c1.508-1.48 2.929-1.902 4.112-2.112 0 0-2.151 1.69-2.151 3.96 0 1.687.043 5.801.043 5.801.799.771 1.986-.342 3.059-1.441Z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    UE Marketplace
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../content/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Content reference
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Getting started
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Getting started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Guides
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inputs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Setting up Player Inputs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Integrating with ALS v4
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Integrating with ALS v4
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-crawling-movement-component" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Crawling Movement component
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Crawling Movement component">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-the-crawling-movement-component" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add the Crawling Movement component
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initialize-the-component" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initialize the component
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-crawling-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Crawling interface
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-implement-the-interface-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Implement the interface methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Implement the interface methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementing-the-events-yellowishgoldish-color" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementing the Events (yellowish/goldish color)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-implement-crawling-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Implement Crawling Input
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-disable-other-movement-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Disable other movement types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Disable other movement types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#listen-to-crawling-state-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listen to crawling state changes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-movement-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set movement mode
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-retarget-the-crawling-animation-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Retarget the crawling animation (optional)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-setup-your-own-animation-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Setup your own animation (optional)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-setup-the-animation-blueprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Setup the Animation Blueprint
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Setup the Animation Blueprint">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-set-direction-and-crawlingstate-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Set Direction and CrawlingState properties
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-create-a-new-state-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Create a new State Machine
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-populate-the-new-state-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Populate the new State Machine
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-add-your-crawl-animation-to-the-state-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Add your Crawl animation to the State Machine
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-set-collisions-for-the-skeleton" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Set collisions for the skeleton
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creating-routes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Creating routes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CHANGELOG/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Changelog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-crawling-movement-component" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Crawling Movement component
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Crawling Movement component">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-the-crawling-movement-component" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add the Crawling Movement component
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initialize-the-component" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initialize the component
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-crawling-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Crawling interface
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-implement-the-interface-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Implement the interface methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Implement the interface methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementing-the-events-yellowishgoldish-color" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementing the Events (yellowish/goldish color)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-implement-crawling-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Implement Crawling Input
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-disable-other-movement-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Disable other movement types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Disable other movement types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#listen-to-crawling-state-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listen to crawling state changes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-movement-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set movement mode
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-retarget-the-crawling-animation-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Retarget the crawling animation (optional)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-setup-your-own-animation-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Setup your own animation (optional)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-setup-the-animation-blueprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Setup the Animation Blueprint
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Setup the Animation Blueprint">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-set-direction-and-crawlingstate-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Set Direction and CrawlingState properties
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-create-a-new-state-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Create a new State Machine
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-populate-the-new-state-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Populate the new State Machine
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-add-your-crawl-animation-to-the-state-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Add your Crawl animation to the State Machine
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-set-collisions-for-the-skeleton" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Set collisions for the skeleton
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="integrating-with-als-v4">Integrating with ALS v4</h1>
+<p><img alt="Static Badge" src="https://img.shields.io/badge/Engine_version-4.23%2B%2C_4.24%2B-brightblue?style=for-the-badge&amp;logo=unrealengine&amp;color=lightblue" /></p>
+<p>This is a step by step guide to integrate the Crawling System for UE 4.24+ into any existing character.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For showcase porpurse, we will be integrating it into ALS v4 (Advanced Locomotion System)</p>
+</div>
+<p>This package is component based, so adding the required functionality to existing characters takes only a few steps and should not interfere with any existing code.</p>
+<h2 id="1-crawling-movement-component">1. Crawling Movement component</h2>
+<p>This system includes a <em>Crawling Movement</em> component.</p>
+<h3 id="add-the-crawling-movement-component">Add the Crawling Movement component</h3>
+<p>You need to add it to your <em>Character</em> blueprint:</p>
+<p><img alt="Add interface to character" loading="lazy" src="../images/setup/als-integration/add-component.jpg" /></p>
+<p>The resulting component should look like this:</p>
+<p><img alt="Add interface to character" loading="lazy" src="../images/setup/als-integration/component-list.jpg" /></p>
+<h3 id="initialize-the-component">Initialize the component</h3>
+<p>This component requires one parameter for the initialization. The <em>Driver Skeleton</em></p>
+<p>This <em>Driver Skeleton</em> is the one that will implement the <em>Anim notify</em> events, so it is important that we set <strong>the  one with the crawling animation</strong>.</p>
+<p>You can initialize it in the constructor of your character as follows:</p>
+<p><img alt="Add interface to character" loading="lazy" src="../images/setup/als-integration/character-constructor.jpg" /></p>
+<h2 id="1-crawling-interface">1. Crawling interface</h2>
+<p>Crawling system uses BPI_CS_Pawn interface to handle functionallity, you need to add It to your ALS character</p>
+<p><img alt="Add interface to character" loading="lazy" src="../images/setup/als-integration/als-v4-add-interface.jpg" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Do not forget</strong> to implement those methods. They are very simple and you can copy/paste them from the first/third person example characters provided in the Crawling System</p>
+</div>
+<h2 id="2-implement-the-interface-methods">2. Implement the interface methods</h2>
+<p>We implemented the interface but now we need to make It's methods work.</p>
+<p>We are going to implement the following methods:</p>
+<p><img alt="Implement interface methods" loading="lazy" src="../images/setup/als-integration/als-v4-implement-methods.jpg" /></p>
+<p><img alt="Implement interface methods" loading="lazy" src="../images/setup/als-integration/als-v4-interface.jpg" /></p>
+<dl>
+<dt>We can differentiate 2 colors on them:</dt>
+<dt><code>**Yellowish/Goldish**</code></dt>
+<dd>
+<p>This are events that are executed on some conditions. For this case, they are triggered from the Crawlying Component that we will be adding later in this guide.</p>
+</dd>
+<dt><code>**Greyish/Blueish**</code></dt>
+<dd>
+<p>Functions that are used by the Crawling component to retrieve information from the Character Blueprint.</p>
+</dd>
+</dl>
+<h3 id="implementing-the-events-yellowishgoldish-color">Implementing the Events (yellowish/goldish color)</h3>
+<p>As said, this events will be triggered under certain circunstances. By default when the player should move to the route start or exit.</p>
+<p>Because of this, we need to implement what the character will do what this happens.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is implemented as an event that can be customized  per Character to allow any kind of character setup. 
+You have full control over what should happen regading moving to the right place + any other thing you might want to happen.</p>
+</div>
+<p><img alt="Basic Event setup" loading="lazy" src="../images/setup/als-integration/als-v4-character-event-setup.jpg" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For ALS v4 you will need to calculate the height location based on the Capsule Component. See the image below for an example.
+<img alt="Basic Event setup" loading="lazy" src="../images/setup/als-integration/als-v4-character-event-setup-capsule.jpg" /></p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">TIP: Split input pin</p>
+<p>To show the 3 coordinates (X, Y, Z) as separated pins, you can right click on the <em>New Location</em> pin and select <em>Split Struct Pin</em>
+<img alt="Basic Event setup" loading="lazy" src="../images/setup/als-integration/tip-split-pin.jpg" /></p>
+</div>
+<h3 id="3-implement-crawling-input">3. Implement Crawling Input</h3>
+<p>The crawling system uses a very simple input setup, you just need to add the following (also can be copied from example characters)</p>
+<div class="admonition note">
+<p class="admonition-title">Input binding setup</p>
+<p>This package does not include bindings, as it could potentially override already defined ones. Instead, you can find the file and how to set the required ones <a href="../inputs/">in this page</a></p>
+</div>
+<p>For the Character to be able to move when in <em>crawling</em> state, you must fire the <em>MoveForward</em> and <em>MoveBackwards</em> events.</p>
+<p>Here you can see an example setup, with the default input binding <em>InputAxis MoveForwardCrawling</em> for players:</p>
+<p><img alt="Default crawling movement implementation" loading="lazy" src="../images/setup/als-integration/input-binding.jpg" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For AI characters, you must trigger the same methods (<em>MoveForward</em> &amp; <em>MoveBackwards</em>) but probably you want to do so by a different event and not by an Input binding.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is not yet working! We need to disable other movement inputs and set the right movement mode.
+Continue reading to see how to do it.</p>
+</div>
+<h3 id="4-disable-other-movement-types">4. Disable other movement types</h3>
+<p>When you are in Crawling mode, you should not trigger any other movement type.</p>
+<p>To do so, we need to disable other types of movement bindings and to set the right movement mode in the <em>Character Movement component</em></p>
+<h4 id="listen-to-crawling-state-changes">Listen to crawling state changes</h4>
+<p>The <em>Crawling Movement</em> component implements an event binding that allows you to react to changes on that state.</p>
+<p>We will be creating a listener in our Character blueprint that allows triggering our own functionality in the Character:</p>
+<p><img alt="State change listener" loading="lazy" src="../images/setup/als-integration/setup-state-listener.jpg" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are not familiar with event bindings, you can:
+1. Place a reference to the Crawling Movement component
+2. Drag from its pin and add a <em>Bind Event to Update Status</em> node.
+3. Drag from the red <em>Event</em> pin in the <em>Bind Event to Update Status</em> node and add a new <em>Create Event</em> node.
+4.Click on the <em>Select Function</em> dropdown and click on <em>Create a matching function</em></p>
+<p>This will create a new function on your blueprint that will be executed every time the <em>Update Status" event from the </em>Crawling Movement* component is triggered.</p>
+</div>
+<h4 id="set-movement-mode">Set movement mode</h4>
+<p>Now that we have a function to listen for Crawling Movement state changes, we need to add our logic to disable other types of movements during the crawling.</p>
+<p>This is how it should look for ALS v4:</p>
+<p><img alt="State change listener" loading="lazy" src="../images/setup/als-integration/set-right-movement-params.jpg" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The nodes of the image above (inside of the red box) are related to ALS system only, so you don’t need to add them if you are not using ALS for this character (actually if you are not using ALS character, those nodes won’t even show up in the node selection help box)</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Toggle Player Input node</p>
+<p>You will notice that the function “Toggle Player Input” does not exists in Unreal Engine. This is because It is just a helper function created by us.
+This function can be copied from the <em>Crawling System</em> Third Person Character, so you can copy/paste from there.
+<img alt="Toggle player input helper" loading="lazy" src="../images/setup/als-integration/toggle-player-input-helper.jpg" /></p>
+</div>
+<h2 id="5-retarget-the-crawling-animation-optional">5. Retarget the crawling animation (optional)</h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This step is optional, as you might have your own crawling animations that don't require retargetting the provided one.</p>
+</div>
+<p><img alt="Retargetting the animation" loading="lazy" src="../images/setup/als-integration/retargetting-animation.webp" /></p>
+<h2 id="6-setup-your-own-animation-optional">6. Setup your own animation (optional)</h2>
+<div class="admonition warning">
+<p class="admonition-title">Animation notifies setup</p>
+<p>If you want to use your own animation (and not do a retargetting as in step 5) this 6th step is mandatory.</p>
+</div>
+<p>The animation for the <em>Driver skeleton</em> (the one setup in the previous steps) need to have some notifies to ensure the <em>steps</em> are detected.</p>
+<p>To do so, simply go to the animation editor and right click on the notifies track:</p>
+<p><img alt="Step notifies" loading="lazy" src="../images/setup/als-integration/anim-steps.jpg" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you fail doing this, the character will never stop moving until it reaches the end of the path.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you use the provided animation with the pack, you will notice that the retargeted animation is not looking good at all in the ALS skeleton. This is due to the retaget tool and can be improved by tweaking manually some bone mapping on the base poses before retargeting. You can find guides on doing so in the Unreal Engine forums and documentation.</p>
+</div>
+<h2 id="7-setup-the-animation-blueprint">7. Setup the Animation Blueprint</h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>ALS Anim BP is very complex, so we are not going to dig deeply into the system. For this tutorial we are going to make a whole new state that does not interfere with anything already setup in the example ALS Anime BP.</p>
+<div class="admonition note">
+<p class="admonition-title">Not only ALS</p>
+<p>This step is the same you should follow on any other <em>Character</em></p>
+</div>
+</div>
+<h3 id="1-set-direction-and-crawlingstate-properties">1. Set <em>Direction</em> and <em>CrawlingState</em> properties</h3>
+<p>The animation requires from a <em>Direction</em> and a <em>CrawlingState</em> properties to work properly.</p>
+<p>The setup is very simple and can be done as in the following images:</p>
+<p><img alt="Anim BP setup" loading="lazy" src="../images/setup/als-integration/animbp-props.jpg" />
+<img alt="Anim BP setup soomed" loading="lazy" src="../images/setup/als-integration/animbp-props-zoom.jpg" /></p>
+<h3 id="2-create-a-new-state-machine">2. Create a new <em>State Machine</em></h3>
+<p>Create a new <em>State Machine</em> and connect It <strong>before</strong> the output pose to a blend pose, using our <em>CrawlingState</em> vabialbe as filter.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This setup ensure that all the ALS things run properly when we are not crawling, and we just blend to our new Crawling <em>State Machine</em> when required.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can copy the “Ragdoll States” state machine and delete It’s content</p>
+</div>
+<p><img alt="New state machine" loading="lazy" src="../images/setup/als-integration/state-machine.jpg" /></p>
+<h3 id="3-populate-the-new-state-machine">3. Populate the new <em>State Machine</em></h3>
+<p>Add a new state in the <em>Crawling states</em> State Machine we have just created in the previous step.</p>
+<p>The name for this state is not important.</p>
+<p><img alt="State machine content" loading="lazy" src="../images/setup/als-integration/state-machine-content.webp" /></p>
+<h3 id="4-add-your-crawl-animation-to-the-state-machine">4. Add your Crawl animation to the <em>State Machine</em></h3>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>It is <strong>VERY IMPORTANT</strong> to set the sync group properly, as the image below shows</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You must implement the <em>play rate</em> pin using the direction variable we declared earlier in this guide.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you do not do this step properly, you will either see the character never stopping when It enters the route or It will play the forward crawling animation always, even when you stop or go backwards.</p>
+</div>
+<p><img alt="Set animation to play" loading="lazy" src="../images/setup/als-integration/set-animation-in-state-machine.jpg" /></p>
+<h2 id="8-set-collisions-for-the-skeleton">8. Set collisions for the skeleton</h2>
+<p>The Crawling System uses a line trace to determine where the ground is placed. </p>
+<p>We need to properly set collision channels to work as expected.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>By default, ALS skeletal mesh has the collision property <em>Block</em> checked for the channel <em>Visibility</em>. This will cause the Crawling System trace to collide with the mesh and return wrong locations, making the character look glitchy.</p>
+</div>
+<p><img alt="Set collision channels" loading="lazy" src="../images/setup/als-integration/collision-channels.jpg" /></p>
+<h1 id="conclusion">Conclusion</h1>
+<p>This Guide can be used for any kind of custom character, as there are only a couple of details/nodes specific to ALS.</p>
+<p>´The final result should look like the following:</p>
+<div class="videowrapper youtube">
+<iframe frameborder="0" src="https://www.youtube-nocookie.com/embed/22P4r7rWidc"></iframe>
+</div>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Was this page helpful?
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81Z"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14Z"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              Thanks for your feedback!
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              Thanks for your feedback! Help us improve this page by using our <a href="https://discord.com/channels/685799359308365851/685799359765676064" target="_blank" rel="noopener">Discord feedback channel</a>.
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../inputs/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Setting up Player Inputs">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Setting up Player Inputs
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../creating-routes/" class="md-footer__link md-footer__link--next" aria-label="Next: Creating routes">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Creating routes
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      All rights reserved
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://discord.com/channels/685799359308365851/685799359765676064" target="_blank" rel="noopener" title="Support Discord Channel" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M524.531 69.836a1.5 1.5 0 0 0-.764-.7A485.065 485.065 0 0 0 404.081 32.03a1.816 1.816 0 0 0-1.923.91 337.461 337.461 0 0 0-14.9 30.6 447.848 447.848 0 0 0-134.426 0 309.541 309.541 0 0 0-15.135-30.6 1.89 1.89 0 0 0-1.924-.91 483.689 483.689 0 0 0-119.688 37.107 1.712 1.712 0 0 0-.788.676C39.068 183.651 18.186 294.69 28.43 404.354a2.016 2.016 0 0 0 .765 1.375 487.666 487.666 0 0 0 146.825 74.189 1.9 1.9 0 0 0 2.063-.676A348.2 348.2 0 0 0 208.12 430.4a1.86 1.86 0 0 0-1.019-2.588 321.173 321.173 0 0 1-45.868-21.853 1.885 1.885 0 0 1-.185-3.126 251.047 251.047 0 0 0 9.109-7.137 1.819 1.819 0 0 1 1.9-.256c96.229 43.917 200.41 43.917 295.5 0a1.812 1.812 0 0 1 1.924.233 234.533 234.533 0 0 0 9.132 7.16 1.884 1.884 0 0 1-.162 3.126 301.407 301.407 0 0 1-45.89 21.83 1.875 1.875 0 0 0-1 2.611 391.055 391.055 0 0 0 30.014 48.815 1.864 1.864 0 0 0 2.063.7A486.048 486.048 0 0 0 610.7 405.729a1.882 1.882 0 0 0 .765-1.352c12.264-126.783-20.532-236.912-86.934-334.541ZM222.491 337.58c-28.972 0-52.844-26.587-52.844-59.239s23.409-59.241 52.844-59.241c29.665 0 53.306 26.82 52.843 59.239 0 32.654-23.41 59.241-52.843 59.241Zm195.38 0c-28.971 0-52.843-26.587-52.843-59.239s23.409-59.241 52.843-59.241c29.667 0 53.307 26.82 52.844 59.239 0 32.654-23.177 59.241-52.844 59.241Z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.instagram.com/nsabater.dev/" target="_blank" rel="noopener" title="Instagram" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.youtube.com/c/NestorSabater" target="_blank" rel="noopener" title="Youtube channel" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.tracking", "navigation.path", "toc.follow", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+        <script src="../../../assets/javascripts/badge.js" async></script>
+      
+    
+  </body>
+</html>

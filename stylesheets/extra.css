@@ -1,0 +1,44 @@
+/* 
+ * Styles for a video wrapper.
+ * To be used by generators like vimeo, youtube...
+ */
+ .videowrapper {
+    position:relative;
+    overflow:hidden;
+    height:0;
+    width:100%;
+    padding-bottom:56.25%;
+}
+.videowrapper iframe {
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+}
+
+.badge {
+    font-family: Verdana, Geneva, "DejaVu Sans", sans-serif !important;
+    text-anchor: middle !important;
+    text-rendering: geometricprecision !important;
+    font-weight: 100 !important;
+    font-size: 0.65rem !important;
+    text-transform: uppercase;
+}
+
+.badge .title {
+    background-color: rgb(85, 85, 85) !important;
+    border-radius: 0 !important;
+    color: rgb(255, 255, 255) !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+
+.badge .value {
+    background-color: lightblue !important;
+    border-radius: 0 !important;
+    color: rgb(51, 51, 51) !important;
+    font-weight: bold !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
