@@ -1,5 +1,7 @@
 # Integrating with ALS v4
 
+![Static Badge](https://img.shields.io/badge/Engine_version-4.23%2B%2C_4.24%2B-brightblue?style=for-the-badge&logo=unrealengine&color=lightblue)
+
 This is a step by step guide to integrate the Crawling System for UE 4.24+ into any existing character.
 
 !!! note
