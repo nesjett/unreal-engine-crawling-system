@@ -78,6 +78,6 @@ This systems DO NOT allow to crawl freely on the game, but to follow a spline ba
 
 ## Technical considerations
 
-The system **only** uses tick events when actively crawling, and only to move the character in the proper direction. The Route Components **DO NOT use** tick events, so the number of instances will not impact your performance.
+The movement component **only** uses tick events when actively crawling, and only to move the character in the proper direction. The Route Components **DO NOT USE** tick events, so the number of instances will not impact on performance.
 
 The animations for the first person Character arms can be used in production, but they are not optimal (the package focuses on functionality) which means that **the rig might not look good on other skeletons**. It is also slightly adjusted on rotation and position inside the implementer blueprints.

@@ -14,7 +14,7 @@ The animation is production ready as long as you use the provided rig, and you a
 
 Retargetting it to other skeletons might not produce a good efect, but that depends on the target rig.
 
-## Is it performant enough for a production game?
+## Is it performant for a production game?
 
 Probably. Being performant is somehow subjective. 
 
@@ -48,7 +48,7 @@ The system is not aiming for complex ground shapes.
 
 The IK system that comes out of the box is a very basic example, developed for flat or semi-flat grounds. 
 
-For specific scenarios you will have to develop your own IK system, but the routing and path following will still work as expected for moving the player along the route.
+For specific scenarios you will have to develop your own IK system, but the routing and path following will still work as expected for moving the player along the route, as well as aligning it to the ground.
 
 
 ## Can I add particles or sounds to different kind of events in the gameplay?
